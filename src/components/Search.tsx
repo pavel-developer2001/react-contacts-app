@@ -9,6 +9,12 @@ import ClearIcon from "@material-ui/icons/Clear";
 import Button from "@material-ui/core/Button";
 import MenuItem from "@material-ui/core/MenuItem";
 
+import ViewListIcon from '@material-ui/icons/ViewList';
+import ViewModuleIcon from '@material-ui/icons/ViewModule';
+import ToggleButton from '@material-ui/lab/ToggleButton';
+import ToggleButtonGroup from '@material-ui/lab/ToggleButtonGroup';
+
+
 const currencies = [
   {
     value: "MAN",
@@ -42,6 +48,9 @@ const useStyles = makeStyles((theme: Theme) =>
     button: {
       margin: theme.spacing(1),
     },
+    modal: {
+      display: "block"
+    },
     root1: {
       "& .MuiTextField-root": {
         margin: theme.spacing(1),
@@ -59,7 +68,11 @@ const Search = () => {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setCurrency(event.target.value);
   };
+  const [view, setView] = React.useState('list');
 
+  const handleChangeWindow = (event: React.MouseEvent<HTMLElement>, nextView: string) => {
+    setView(nextView);
+  };
   return (
     <div className={classes.main}>
       <Paper component="form" className={classes.root}>
@@ -107,6 +120,15 @@ const Search = () => {
       >
         Clear
       </Button>
+      <ToggleButtonGroup orientation="vertical" className={classes.modal} value={view} exclusive onChange={handleChangeWindow}>
+      <ToggleButton value="list" aria-label="list">
+        <ViewListIcon />
+      </ToggleButton>
+      <ToggleButton value="module" aria-label="module">
+        <ViewModuleIcon />
+      </ToggleButton>
+      
+    </ToggleButtonGroup>
     </div>
   );
 };

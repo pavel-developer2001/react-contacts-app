@@ -1,7 +1,7 @@
 const SET_FETCH_DATA = "SET_FETCH_DATA"
 
 const initialState = {
-    items: {},
+    items: [],
     loading: true
 }
 export default function mainReducer(state = initialState, action) {

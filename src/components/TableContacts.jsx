@@ -26,7 +26,7 @@ const TableContacts = () => {
     dispatch(fetchContacts());
   }, []);
   const contacts = useSelector((state) => state.main.items.results);
-  const { loading } = useSelector((state) => state.main.loading);
+  const loading  = useSelector((state) => state.main.loading);
   console.log(contacts);
   return (
     <div>
@@ -62,12 +62,12 @@ const TableContacts = () => {
                   <TableCell align="right">{contact.dob.date}</TableCell>
                   <TableCell align="right">{contact.email}</TableCell>
                   <TableCell align="right">{contact.phone}</TableCell>
-                  <TableCell align="right">{contact.location}</TableCell>
+                  <TableCell align="right">{contact.location.city}</TableCell>
                   <TableCell align="right">{contact.nat}</TableCell>
                 </TableRow>
               ))}
-            </TableBody>
-          )}
+            </TableBody> 
+           )}
         </Table>
       </TableContainer>
     </div>

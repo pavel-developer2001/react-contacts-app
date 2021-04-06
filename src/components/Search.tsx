@@ -49,7 +49,8 @@ const useStyles = makeStyles((theme: Theme) =>
       margin: theme.spacing(1),
     },
     modal: {
-      display: "block"
+      display: "block",
+      paddingLeft: "20%",
     },
     root1: {
       "& .MuiTextField-root": {

@@ -1,7 +1,7 @@
 const SET_FETCH_DATA = "SET_FETCH_DATA"
 
 const initialState = {
-    items: []
+    items: {}
 }
 export default function mainReducer(state = initialState, action) {
     switch(action.type){
@@ -10,6 +10,8 @@ export default function mainReducer(state = initialState, action) {
                 ...state,
                 items: action.payload
             }
+        default:
+            return state
     }
 
 }

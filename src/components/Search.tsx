@@ -54,7 +54,7 @@ const useStyles = makeStyles((theme: Theme) =>
 const Search = () => {
   const classes = useStyles();
 
-  const [currency, setCurrency] = React.useState("EUR");
+  const [currency, setCurrency] = React.useState("MAN");
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setCurrency(event.target.value);

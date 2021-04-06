@@ -1,13 +1,15 @@
 import React from "react";
-import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
-import Button from "@material-ui/core/Button";
+import Header from "./components/Header";
+import Search from "./components/Search";
+import TableContacts from "./components/TableContacts";
+
 
 function App() {
   return (
     <div className="App">
-      <Button variant="contained" color="secondary">
-        Secondary
-      </Button>
+      <Header />
+      <Search />
+      <TableContacts />
     </div>
   );
 }

@@ -5,7 +5,7 @@ export const fetchContacts = () => {
         try{
             const responce = await fetch('https://randomuser.me/api/?results=20')
             const json = await responce.json()
-            setTimeout(() => {dispatch(setFetchData(json))}, 500)   
+            setTimeout(() => {dispatch(setFetchData(json))}, 1500)   
         }
         catch(e){
             console.log(e.message)
